@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+ {% block content %}
+
+   <h3>мой лист</h3>
+<a href="add_list">Добавить фильм
+</a>
+{% for el in lists_cinema %}
+   <h1>{{el.cinema_id}}. {{el.cinema_name}}</h1>
+        <ul>
+            <li> Актёры - {{el.actors}}</li>
+            <li> Дата выхода фильма - {{el.release_date}}</li>
+            <li> Страна - {{el.country_of_origin}}</li>
+            <li> Жанр - {{el.genre}}</li>
+            <li>Описание - {{el.description}}</li>
+        </ul>
+
+{% endfor %}
+    {% endblock content%}
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+ {% block content %}
+ {% for msg in get_flashed_messages() %}
+ <div class="flash"> {{msg}}</div>
+{% endfor %}
+   <h3>Добавление фильма</h3>
+   <p> Ведите URL фильма с "Кинопоиска"</p>
+<form action="/add_cinema" method="post" class="add_cinema">
+   <p><label>URL</label><input type="text" name="url_cinema" value="" required /></p>
+   <p><input type="submit" value="Отправить"></p>
+</form>
+
+<h1> {{ cinema }}</h1>
+<p>{{ actors }}</p>
+
+</h1>
+    {% endblock content%}
+</body>
+</html>

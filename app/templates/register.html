@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+{% for msg in get_flashed_messages() %}
+    <div class="flash"> {{msg}}</div>
+{% endfor %}
+<form action="/register" method="post" class="login">
+<p><label>login</label><input type="text" name="username" value="" required /></p>
+<p><label>password</label><input type="text" name="password" value="" required /></p>
+<p><label>retype password</label><input type="text" name="password2" value="" required /></p>
+<p><input type="submit" value="Зарегестрироваться"></p>
+<p><a href="login">Войти в аккаунт</a></p>
+</form>
+
+{% endblock content%}
